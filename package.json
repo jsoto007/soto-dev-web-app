@@ -33,6 +33,7 @@
     "unified-conditional": "0.0.2"
   },
   "devDependencies": {
+    "@netlify/next": "^1.4.9",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
     "prettier": "^3.3.2",
