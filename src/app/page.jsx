@@ -42,7 +42,7 @@ function Technologies() {
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-[#A78BFA] sm:text-left">
-            We build with proven, industry-standard technologies
+          Building with proven, industry-standard technologies
           </h2>
           <div className="h-px flex-auto bg-[#334155]" />
         </FadeIn>
@@ -72,13 +72,11 @@ function CaseStudies({ caseStudies }) {
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        title="Using technology to leverage creativity"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+        We believe technology should amplify human potential — unlocking new ways to create, connect, and solve meaningful problems.
         </p>
       </SectionIntro>
       <Container className="mt-16">
