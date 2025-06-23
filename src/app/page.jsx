@@ -76,7 +76,7 @@ function CaseStudies({ caseStudies }) {
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-        We believe technology should amplify human potential — unlocking new ways to create, connect, and solve meaningful problems.
+        Technology should amplify human potential — unlocking new ways to create, connect, and solve meaningful problems.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -105,7 +105,7 @@ function CaseStudies({ caseStudies }) {
                   <span className="text-[#334155]" aria-hidden="true">
                     /
                   </span>
-                  <span>Case study</span>
+                  <span>Past Projects</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-blue-950">
                   {caseStudy.title}

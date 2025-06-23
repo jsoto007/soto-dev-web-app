@@ -144,7 +144,7 @@ export default async function Work() {
   return (
     <RootLayout>
       <PageIntro
-        eyebrow="Our work"
+        eyebrow="###Our work"
         title="Proven solutions for real-world problems."
       >
         <p>

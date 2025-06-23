@@ -3,22 +3,23 @@ import imageHero from './hero.jpg'
 import imageDebraFiscal from './debra-fiscal.jpg'
 
 export const caseStudy = {
-  client: 'FamilyFund',
-  title: 'Skip the bank, borrow from those you trust',
+  client: 'AutoTrack',
+  title: 'Smarter car inventory management, powered by automation and AI',
   description:
-    'FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution.',
+    'AutoTrack is a full-stack vehicle tracking platform that enables dealerships to manage inventory, assign staff, and automatically report discrepancies—all while syncing listings with major car selling platforms.',
   summary: [
-    'FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution.',
-    'We developed a custom CMS to power their blog with and optimised their site to rank higher for the keywords “Gary Vee” and “Tony Robbins”.',
+    'AutoTrack is a full-stack vehicle tracking platform that allows dealerships to manage and monitor their car inventory efficiently.',
+    'Users can upload vehicles, assign daily inventory tasks to staff, and receive automated alerts when cars go unaccounted for.',
+    'The platform syncs new car entries with major car selling platforms and leverages AI to analyze trends and suggest optimized car listing descriptions.'
   ],
   logo,
   image: { src: imageHero },
-  date: '2023-01',
-  service: 'Web development, CMS',
+  date: '2025-05',
+  service: 'Web development, AI integration',
   testimonial: {
-    author: { name: 'Debra Fiscal', role: 'CEO of FamilyFund' },
+    author: { name: 'Debra Fiscal', role: 'CEO of AutoTrack' },
     content:
-      'Working with Studio, we felt more like a partner than a customer. They really resonated with our mission to change the way people convince their parents to cash out their pensions.',
+      'With Studio’s help, we created a smarter inventory system that lets us focus less on manual updates and more on selling. The AI insights are game-changing.'
   },
 }
 
@@ -29,35 +30,23 @@ export const metadata = {
 
 ## Overview
 
-Having written one of the most shared posts on medium.com (“_How to cash out your Dad’s 401K without him knowing_”) FamilyFund approached us looking to build out their own blog.
+AutoTrack approached us to help build an intelligent vehicle tracking system designed for dealerships and used car businesses. The goal was to streamline the inventory process, assign accountability to users, and reduce errors in tracking.
 
-The blog would help drive new traffic to their site and serve as a resource-hub for users already trying to exploit their network for money. Because it was so important that they own their own content, we decided that an on-prem solution would be best.
+We built a full-stack platform that allows staff to upload vehicles, assign daily inventory checks, and notify the admin automatically if any vehicles are unaccounted for. Admins can also sync new listings directly to major car selling apps, expanding visibility instantly.
 
-We installed 24 Mac Minis bought from craigslist in the storage cupboard of their office. One machine would be used for the web server and another one for the build server. The other 22 were for redundancy, and to DDOS squarespace.com every few months to keep them on their toes.
-
-To optimise their search traffic we used an innovative technique. Every post has a shadow post only visible to web crawlers that is some variation of _“Gary Vee is looking to invest in new founders”_. Like bees to honey.
-
-## What we did
+To make it smarter, AutoTrack uses AI to generate insights, highlight trends, and recommend vehicle listing descriptions that help cars sell faster.
 
 <TagList>
-  <TagListItem>Frontend (Next.js)</TagListItem>
-  <TagListItem>Custom CMS</TagListItem>
-  <TagListItem>SEO</TagListItem>
-  <TagListItem>Infrastructure</TagListItem>
+  <TagListItem>Full-Stack Development (T3 Stack)</TagListItem>
+  <TagListItem>AI Integration</TagListItem>
+  <TagListItem>Inventory Automation</TagListItem>
+  <TagListItem>Third-Party Sync</TagListItem>
 </TagList>
 
-<Blockquote
-  author={{ name: 'Debra Fiscal', role: 'CEO of FamilyFund' }}
-  image={{ src: imageDebraFiscal }}
->
-  Working with Studio, we felt more like a partner than a customer. They really
-  resonated with our mission to change the way people convince their parents to
-  cash out their pensions.
-</Blockquote>
 
 <StatList>
-  <StatListItem value="25%" label="Less traffic" />
-  <StatListItem value="10x" label="Page load times" />
-  <StatListItem value="15%" label="Higher infra costs" />
-  <StatListItem value="$1.2M" label="Legal fees" />
+  <StatListItem value="95%" label="Inventory accuracy rate" />
+  <StatListItem value="3x" label="Faster vehicle listings" />
+  <StatListItem value="80%" label="Reduction in admin workload" />
+  <StatListItem value="1-click" label="Multi-platform sync" />
 </StatList>
