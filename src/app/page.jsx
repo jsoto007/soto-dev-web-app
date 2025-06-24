@@ -14,7 +14,7 @@ import { loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
 import hugging_face from '../images/tech/hugging_face.svg'
-import netlify from '../images/tech/netlify.svg'
+
 import openai_dark from '../images/tech/openai_dark.svg'
 import python from '../images/tech/python.svg'
 import typescript from '../images/tech/typescript.svg'
@@ -90,10 +90,11 @@ function CaseStudies({ caseStudies }) {
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
-                      className="h-16 w-16"
+                      className="h-16 w-16 rounded-sm"
                       unoptimized
                     />
                   </Link>
+                  
                 </h3>
                 <p className="mt-6 flex gap-x-2 text-sm text-blue-950">
                   <time
@@ -113,6 +114,7 @@ function CaseStudies({ caseStudies }) {
                 <p className="mt-4 text-base text-[#334155]">
                   {caseStudy.description}
                 </p>
+
               </article>
             </FadeIn>
           ))}

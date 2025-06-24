@@ -12,6 +12,7 @@ export function FadeIn(props) {
   let isInStaggerGroup = useContext(FadeInStaggerContext)
 
   return (
+    <>
     <motion.div
       variants={{
         hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
@@ -27,12 +28,14 @@ export function FadeIn(props) {
           })}
       {...props}
     />
+    </>
   )
 }
 
 export function FadeInStagger({ faster = false, ...props }) {
   return (
     <FadeInStaggerContext.Provider value={true}>
+
       <motion.div
         initial="hidden"
         whileInView="visible"
