@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from '@/components/Button'
 
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
@@ -114,7 +115,10 @@ function CaseStudies({ caseStudies }) {
                 <p className="mt-4 text-base text-[#334155]">
                   {caseStudy.description}
                 </p>
-
+                <p className='mt-6 -mb-2 text-xs font-bold'>Learn more →</p>
+                  {/* <p className='mt-4'>
+                    <Button>Learn More</Button>
+                  </p> */}
               </article>
             </FadeIn>
           ))}

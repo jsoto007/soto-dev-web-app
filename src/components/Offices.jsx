@@ -20,7 +20,7 @@ function Office({ name, children, invert = false }) {
 export function Offices({ invert = false, ...props }) {
   return (
     <ul role="list" {...props}>
-      <li>
+      {/* <li>
         <Office name="Copenhagen" invert={invert}>
           1 Carlsberg Gate
           <br />
@@ -33,7 +33,7 @@ export function Offices({ invert = false, ...props }) {
           <br />
           7190, Billund, Denmark
         </Office>
-      </li>
+      </li> */}
     </ul>
   )
 }
