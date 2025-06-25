@@ -115,7 +115,9 @@ function CaseStudies({ caseStudies }) {
                 <p className="mt-4 text-base text-[#334155]">
                   {caseStudy.description}
                 </p>
-                <p className='mt-6 -mb-2 text-xs font-bold'>Learn more →</p>
+                <div className="mt-auto flex justify-end">
+                  <p className="mt-6 -mb-2 text-xs font-bold">Learn more →</p>
+                </div>
                   {/* <p className='mt-4'>
                     <Button>Learn More</Button>
                   </p> */}
