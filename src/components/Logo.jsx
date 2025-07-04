@@ -12,7 +12,7 @@ export function Logomark({ invert = false, filled = false, ...props }) {
       alt="Soto Dev Logo"
       className={clsx('h-auto w-auto')}
       width={70}
-      height={30}
+      height={70}
       priority
       {...props}
     />

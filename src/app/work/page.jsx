@@ -144,13 +144,11 @@ export default async function Work() {
   return (
     <RootLayout>
       <PageIntro
-        eyebrow="###Our work"
+        eyebrow="Our work"
         title="Proven solutions for real-world problems."
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+        We believe in building efficiently and delivering maximum value. By leveraging proven technologies, reusable components, and AI-driven tools, we accelerate development and focus on solving what matters most for your business.
         </p>
       </PageIntro>
 
@@ -158,10 +156,9 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
+        client={{ name: 'M.S.', logo: logoMailSmirk }}
       >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
+        We approached <em>SotoDev</em> for their expertise in AI-driven solutions. They delivered a custom product that exceeded expectations — fast, efficient, and tailored to our needs.
       </Testimonial>
 
       <Clients />
