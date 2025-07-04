@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 
-function FacebookIcon(props) {
+function LinkedIn(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z"
+        d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM0 24h5V7H0v17ZM7.5 7H12v2.56h.08c.63-1.2 2.17-2.56 4.42-2.56C22.58 7 24 9.44 24 13.29V24h-5v-9.36c0-2.23-.04-5.1-3.11-5.1-3.12 0-3.59 2.44-3.59 4.95V24h-5V7Z"
       />
     </svg>
   )
@@ -50,10 +50,9 @@ function DribbbleIcon(props) {
 }
 
 export const socialMediaProfiles = [
-  { title: 'Facebook', href: 'https://facebook.com', icon: FacebookIcon },
-  { title: 'Instagram', href: 'https://instagram.com', icon: InstagramIcon },
-  { title: 'GitHub', href: 'https://github.com', icon: GitHubIcon },
-  { title: 'Dribbble', href: 'https://dribbble.com', icon: DribbbleIcon },
+  { title: 'LinkedIn', href: 'https://www.linkedin.com/in/jose-javier-soto-a29b96111/', icon: LinkedIn },
+  { title: 'Instagram', href: 'https://www.instagram.com/jsprograming/', icon: InstagramIcon },
+  { title: 'GitHub', href: 'https://github.com/jsoto007', icon: GitHubIcon },
 ]
 
 export function SocialMedia({ className, invert = false }) {
