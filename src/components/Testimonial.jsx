@@ -25,11 +25,19 @@ export function Testimonial({ children, client, className }) {
                 {children}
               </p>
             </blockquote>
-            <figcaption className="mt-10">
-              <Image src={client.logo} alt={client.name} unoptimized />
+            <figcaption className="mt-10 flex items-center space-x-4">
+              <Image
+                src={client.logo.src}
+                alt={client.name}
+                className={client.logo.className}
+                width={30}
+                height={30}
+              />
+              <p className="text-lg font-serif font-medium text-neutral-800">{client.name}</p>
             </figcaption>
           </figure>
         </FadeIn>
+
       </Container>
     </div>
   )

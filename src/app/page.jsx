@@ -9,7 +9,8 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
+// import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
+import bmfLogo from '../images/clients/unseal/bmfLogo.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
@@ -118,9 +119,6 @@ function CaseStudies({ caseStudies }) {
                 <div className="mt-auto flex justify-end">
                   <p className="mt-6 -mb-2 text-xs font-bold">Learn more →</p>
                 </div>
-                  {/* <p className='mt-4'>
-                    <Button>Learn More</Button>
-                  </p> */}
               </article>
             </FadeIn>
           ))}
@@ -135,12 +133,11 @@ function Services() {
     <>
       <SectionIntro
         eyebrow="Services"
-        title="We help you identify, explore and respond to new opportunities."
+        title="We help small businesses unlock efficiency through custom software."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          As long as those opportunities involve giving us money to re-purpose
-          old projects — we can come up with an endless number of those.
+          We design and develop AI-powered tools that eliminate repetitive tasks, automate workflows, and support your growth — so your team can focus on what matters most.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -156,23 +153,16 @@ function Services() {
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
             <ListItem title="Web development">
-              We specialise in crafting beautiful, high quality marketing pages.
-              The rest of the website will be a shell that uses lorem ipsum
-              everywhere.
+            We design and develop clean, intuitive websites that connect with your audience. Whether it’s a landing page or full product suite, we turn your ideas into fast, functional experiences.
             </ListItem>
             <ListItem title="Application development">
-              We have a team of skilled developers who are experts in the latest
-              app frameworks, like Angular 1 and Google Web Toolkit.
+            We build powerful, scalable applications using modern frameworks like Next.js, TypeScript, and Python — designed to streamline operations, automate workflows, and scale with your business.
             </ListItem>
             <ListItem title="E-commerce">
-              We are at the forefront of modern e-commerce development. Which
-              mainly means adding your logo to the Shopify store template we’ve
-              used for the past six years.
+            We create custom e-commerce experiences that drive sales, simplify operations, and integrate with your preferred platforms, whether you’re just getting started or ready to scale.
             </ListItem>
             <ListItem title="Custom content management">
-              At Studio we understand the importance of having a robust and
-              customised CMS. That’s why we run all of our client projects out
-              of a single, enormous Joomla instance.
+            We build tailored dashboards and CMS tools that give you full control over your content and workflows — with simplicity, security, and scalability at the core.
             </ListItem>
           </List>
         </div>
@@ -208,11 +198,9 @@ export default async function Home() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
+        client={{ name: 'Burdier', logo: bmfLogo }}
       >
-        The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user’s microphone without triggering one of
-        those annoying permission dialogs.
+        SotoDev delivered exceptional work ahead of schedule. The custom software they built streamlined our internal processes and allowed my team to focus more on serving our clients. It’s saving us over 40 hours a week on repetitive tasks. An absolute game changer for our workflow.
       </Testimonial>
 
       <Services />
