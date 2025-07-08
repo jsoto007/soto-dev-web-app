@@ -39,16 +39,13 @@ function Culture() {
       <Container className="mt-16">
         <GridList>
           <GridListItem title="Loyalty" invert>
-            Our team has been with us since the beginning because none of them
-            are allowed to have LinkedIn profiles.
+            Our team thrives because we invest in each other’s growth and success.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working
-            every waking second.
+            We trust each team member to own their work and deliver on their commitments.
           </GridListItem>
           <GridListItem title="Compassion" invert>
-            You never know what someone is going through at home and we make
-            sure to never find out.
+            We support each other as people, not just as professionals — because life happens.
           </GridListItem>
         </GridList>
       </Container>
@@ -189,31 +186,24 @@ export default async function About() {
 
   return (
     <RootLayout>
-      <PageIntro eyebrow="About us" title="Our strength is collaboration">
+      <PageIntro eyebrow="About us" title="Custom software powered by collaboration">
         <p>
-          We believe that our strength lies in our collaborative approach, which
-          puts our clients at the center of everything we do.
+          At SotoDev, we believe innovation thrives in collaboration. Our focus is on delivering smart, tailored software solutions that solve real problems and elevate small businesses.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Studio was started by three friends who noticed that developer
-            studios were charging clients double what an in-house team would
-            cost. Since the beginning, we have been committed to doing things
-            differently by charging triple instead.
+            SotoDev was founded to bridge the gap between affordability and quality. We offer modern, AI-driven software without the bloated agency costs — focusing on delivering exactly what you need, when you need it.
           </p>
           <p>
-            At Studio, we’re more than just colleagues — we’re a family. This
-            means we pay very little and expect people to work late. We want our
-            employees to bring their whole selves to work. In return, we just
-            ask that they keep themselves there until at least 6:30pm.
+            We’re a flexible and passionate team that believes in clarity, communication, and building long-term partnerships. We help small businesses automate, streamline, and grow.
           </p>
         </div>
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
+          <StatListItem value="12+" label="Projects launched" />
+          <StatListItem value="100%" label="Client retention rate" />
+          <StatListItem value="$0" label="Wasted resources" />
         </StatList>
       </Container>
 
