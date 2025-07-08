@@ -241,9 +241,7 @@ export default function Process() {
     <RootLayout>
       <PageIntro eyebrow="Our process" title="How we work">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          At SotoDev, we focus on efficiency and purposeful reuse to deliver maximum value to our clients. Our approach builds on proven solutions while tailoring each project to fit the specific needs of small businesses and private practices.
         </p>
       </PageIntro>
 
