@@ -7,6 +7,7 @@ import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { RootLayout } from '@/components/RootLayout'
 import { loadCaseStudies } from '@/lib/mdx'
+import SocialMediaIcons from '@/components/SocialMediaIcons'
 
 export default async function CaseStudyLayout({ caseStudy, children }) {
   let allCaseStudies = await loadCaseStudies()
@@ -61,11 +62,12 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
             </div>
           </FadeIn>
         </header>
-
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <FadeIn>
             <MDXComponents.wrapper>{children}</MDXComponents.wrapper>
           </FadeIn>
+          <SocialMediaIcons />
+        <h3 className="text-center text-xs mt-6 font-bold">Learn more →</h3>
         </Container>
       </article>
 
