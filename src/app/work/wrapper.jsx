@@ -66,8 +66,10 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
           <FadeIn>
             <MDXComponents.wrapper>{children}</MDXComponents.wrapper>
           </FadeIn>
-          <SocialMediaIcons />
-        <h3 className="text-center text-xs mt-6 font-bold">Learn more →</h3>
+          <FadeIn>
+            <SocialMediaIcons />
+            <h3 className="text-center text-xs mt-6 font-bold">Learn more →</h3>
+          </FadeIn>
         </Container>
       </article>
 
