@@ -1,0 +1,204 @@
+import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
+
+export const article = {
+  date: '2025-04-14',
+  title: 'Uploading Images in Flask and React',
+  description:
+    'A guide to uploading photos to a Flask API, storing them, returning a public URL, and displaying them in a React frontend.',
+  author: {
+    name: 'Jose Javier Soto',
+    role: 'Software Developer',
+    image: { src: imageChelseaHagon },
+  },
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+## Uploading Images in Flask and React
+
+Uploading images in web applications is a common requirement.
+
+In this post, we’ll guide you through the process of uploading photos to a Flask API, storing them on the server, returning a public URL, and displaying the photo immediately in a React frontend. We’ll use Flask with Flask-RESTful on the backend and Vite + React on the frontend.
+
+This post assumes knowledge of Python, Flask, SQLAlchemy, and React.js.
+
+### Backend Setup (Flask)
+
+#### 1. Configure Flask to Handle Uploads
+
+```python
+import os
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'uploads')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+```
+
+#### 2. Create the Upload Endpoint
+
+```python
+from flask import request, jsonify, url_for
+from flask_restful import Resource
+import uuid
+
+class UploadPhoto(Resource):
+    def post(self):
+        if 'photo' not in request.files:
+            return {"error": "No file part"}, 400
+        file = request.files['photo']
+
+        master_car_record_id = request.form.get("master_car_record_id")
+        if not master_car_record_id:
+            return {"error": "Missing master_car_record_id"}, 400
+
+        if file.filename == '':
+            return {"error": "No selected file"}, 400
+
+        if file and allowed_file(file.filename):
+            filename = f"{uuid.uuid4().hex}_{secure_filename(file.filename)}"
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(filepath)
+
+            record = MasterCarRecord.query.get(master_car_record_id)
+            if not record:
+                return {"error": "MasterCarRecord not found"}, 404
+
+            photo = CarPhoto(
+                url=f"/static/uploads/{filename}",
+                master_car_record_id=master_car_record_id
+            )
+            db.session.add(photo)
+            db.session.commit()
+
+            return {
+                "message": "Photo uploaded",
+                "url": url_for('serve_uploaded_file', filename=filename, _external=True)
+            }, 201
+
+        return {"error": "File type not allowed"}, 400
+```
+
+Add the route:
+
+```python
+api.add_resource(UploadPhoto, '/api/upload_photo', endpoint='upload_photo')
+```
+
+#### 3. Serve Uploaded Files
+
+```python
+from flask import send_from_directory
+
+@app.route('/static/uploads/<filename>')
+def serve_uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+```
+
+### Frontend Setup (React with Vite)
+
+#### 1. Configure Vite to Proxy to Flask
+
+In `vite.config.js`:
+
+```javascript
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5555',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
+})
+```
+
+#### 2. React Component to Upload and Display Image
+
+```javascript
+import React, { useState } from "react";
+
+export default function PhotoUploader() {
+  const [file, setFile] = useState(null);
+  const [message, setMessage] = useState("");
+  const [photoUrl, setPhotoUrl] = useState("");
+
+  const handleUpload = async (e) => {
+    e.preventDefault();
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("photo", file);
+    formData.append("master_car_record_id", 1); // replace with actual ID
+
+    const response = await fetch("/api/upload_photo", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      setMessage("Photo uploaded successfully!");
+      setPhotoUrl(data.url);
+    } else {
+      setMessage("Upload failed.");
+      setPhotoUrl("");
+    }
+  };
+
+
+  return (
+    <form onSubmit={handleUpload}>
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+      <button type="submit">Upload</button>
+      {message && <p>{message}</p>}
+      {photoUrl && <img src={photoUrl} alt="Uploaded" style={{ maxWidth: "300px" }} />}
+    </form>
+  );
+}
+```
+
+#### Example SQLAlchemy Model
+
+```python
+class CarPhoto(db.Model, SerializerMixin):
+    __tablename__ = 'car_photos'
+
+    serialize_rules = ('-car_inventory', '-master_car_record',)
+
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.String, nullable=False)
+
+    car_inventory_id = db.Column(db.Integer, db.ForeignKey('car_inventories.id'), nullable=True)
+    car_inventory = relationship('CarInventory', backref=backref('photos', cascade='all, delete-orphan'))
+
+    master_car_record_id = db.Column(db.Integer, db.ForeignKey('master_car_records.id'), nullable=True)
+    master_car_record = relationship('MasterCarRecord', backref=backref('photos', cascade='all, delete-orphan'))
+```
+
+### Run the Frontend
+
+```bash
+npm run dev
+```
+
+### Start the Flask Server
+
+```bash
+pipenv shell
+flask run --port=5555
+```
+
+## Conclusion
+
+With just a few lines of code on both the Flask backend and the React frontend, you’ve now built a simple yet functional photo upload and display system. This setup allows users to upload images, stores them securely on the server, and provides immediate visual feedback by rendering the uploaded image in the browser. From here, you can expand the system with features like image previews, validations, user authentication, or cloud storage integration.

@@ -12,9 +12,9 @@ import { formatDate } from '@/lib/formatDate'
 import { loadArticles } from '@/lib/mdx'
 
 export const metadata = {
-  title: 'Blog',
+  title: 'SotoDev Blog',
   description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
+    'Insights, updates, and tech perspectives from the SotoDev team on building custom software and automation for small businesses.',
 }
 
 export default async function Blog() {
@@ -22,10 +22,9 @@ export default async function Blog() {
 
   return (
     <RootLayout>
-      <PageIntro eyebrow="Blog" title="The latest articles and news">
+      <PageIntro eyebrow="SotoDev Blog" title="Insights from the SotoDev team">
         <p>
-          Stay up-to-date with the latest industry news as our marketing teams
-          finds new ways to re-purpose old CSS tricks articles.
+          Explore articles on software development, automation, and small business tech. Stay in the loop with fresh ideas from the team behind SotoDev.
         </p>
       </PageIntro>
 
@@ -72,7 +71,7 @@ export default async function Blog() {
                         aria-label={`Read more: ${article.title}`}
                         className="mt-8"
                       >
-                        Read more
+                        Read article
                       </Button>
                     </div>
                   </div>

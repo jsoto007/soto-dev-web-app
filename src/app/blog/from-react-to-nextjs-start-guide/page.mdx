@@ -1,0 +1,155 @@
+export const article = {
+  date: '2025-05-09',
+  title: 'From React to NEXT.JS: A Quick Start Guide',
+  description:
+    'If you’re comfortable with React and are looking to get started with Next.js, this post will help you transition quickly by walking through key concepts like project setup, components, routing, and dynamic routes.',
+  author: {
+    name: 'Jose Javier Soto',
+    role: 'Software Developer',
+    image: { src: '' },
+  },
+}
+
+
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+## From React to NEXT.JS: A Quick Start Guide
+
+If you’re comfortable with React and are looking to get started with Next.js, this post will help you transition quickly by walking through key concepts like project setup, components, routing, and dynamic routes.
+
+### Creating a New Next.js App
+
+To get started, create a new Next.js app using the following command:
+
+```bash
+npx create-next-app@latest
+```
+
+During the set up, you will be asked to select your flavor of language, routing, etc. For this example, we will need to select the included routing option.
+
+Once the setup is complete, you can start the development server by running:
+
+```bash
+npm run dev
+```
+
+This will launch the app at http://localhost:3000 (or another available port, which will be indicated on the terminal).
+
+### Components in Next.js
+
+If you’ve used React before, components in Next.js will feel very familiar. However, one key difference in Next.js 13+ is the distinction between Server Components and Client Components.
+
+#### Server vs Client Components
+
+- By default, components are server-side in the App Router.
+- If you need to use React hooks like `useState` or `useEffect`, you must explicitly declare the component as a Client Component.
+
+To do this, add `“use client”` at the top of your file:
+
+```tsx
+'use client';
+
+import { useState } from 'react';
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+}
+```
+
+If `“use client”` is omitted, the component will run on the server by default.
+
+### Routing in Next.js
+
+Next.js uses a file-based routing system. That means your folder and file structure inside the `app/` directory defines your routes.
+
+Here’s an example of how to structure a route:
+
+```
+app/
+├── about/
+│   └── team/
+│       └── [memberid]/
+│           └── page.tsx
+```
+
+### Creating a Route
+
+To create a new route:
+
+1. Inside the `app/` directory, create a folder named after the route.
+2. Inside that folder, add a `page.tsx` file with a component.
+
+**Example: `/about` route**
+
+```tsx
+// app/about/page.tsx
+
+export default function About() {
+  return <h1>Hello from About route</h1>;
+}
+```
+
+### Nested Routes
+
+To create a nested route like `/about/team`:
+
+```
+app/
+├── about/
+│   └── team/
+│       └── page.tsx
+```
+
+**Example:**
+
+```tsx
+// app/about/team/page.tsx
+
+export default function Team() {
+  return <h2>Hello from the Team route: we are nested inside the About directory</h2>;
+}
+```
+
+### Dynamic Routes
+
+Let’s say you want to create a page for individual team members, like:
+
+- `/about/team/123`
+- `/about/team/jane`
+
+To achieve this, use dynamic segments by wrapping the folder name in square brackets:
+
+```
+app/
+├── about/
+│   └── team/
+│       └── [memberid]/
+│           └── page.tsx
+```
+
+**Example:**
+
+```tsx
+// app/about/team/[memberid]/page.tsx
+
+export default function TeamMemberDetails() {
+  return <h2>Hello from the dynamic route</h2>;
+}
+```
+
+In a real app, you would likely access the `memberid` via params to fetch data or personalize the content.
+
+### Recap
+
+- `npx create-next-app@latest` creates your app.
+- Use `“use client”` when working with React hooks.
+- File and folder names define your routes.
+- Nest folders to create nested routes.
+- Use square brackets for dynamic routes (e.g., `[id]`).
+
+Next.js is incredibly powerful and intuitive once you get the hang of its routing and component model. Whether you’re building static sites or full-stack applications, it offers the best of both worlds.

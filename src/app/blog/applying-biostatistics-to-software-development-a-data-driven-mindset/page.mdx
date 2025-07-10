@@ -1,0 +1,122 @@
+import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
+
+export const article = {
+  date: '2025-07-10',
+  title: 'Applying Biostatistics to Software Development: A Data-Driven Mindset',
+  description:
+    'Explore how statistical techniques from biostatistics can guide software development decisions, testing, and feature design.',
+  author: {
+    name: 'Jose Javier Soto',
+    role: 'Software Developer',
+    image: { src: imageChelseaHagon },
+  },
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+Applying Biostatistics to Software Development: A Data-Driven Mindset
+
+Jose Javier Soto  
+*5 min read • July 10, 2025*
+
+In the world of software development, decisions are often guided by intuition, experience, or best practices, but what if we adopted a more empirical, statistically rigorous approach? Biostatistics, a discipline rooted in analyzing biological and health data, offers principles that can revolutionize how we build, test, and improve software. This post explores how biostatistical thinking can provide clarity in decision-making, improve product reliability, and help teams iterate more intelligently.
+
+## What Is Biostatistics?
+
+Biostatistics applies statistical reasoning and methods to biological and health-related problems. It combines knowledge of biology, public health, and statistics to design studies, interpret data, and draw meaningful conclusions. In this context, **rigorous hypothesis testing, control groups, confidence intervals, and regression modeling** are core pillars.
+
+> “Biostatistics is the discipline that assures valid conclusions can be drawn from empirical data.”  
+> — Rosner, B. (2015). *Fundamentals of Biostatistics*
+
+## Why Should Software Developers Care?
+
+While software isn't a biological organism, it’s a complex system influenced by countless variables—user behavior, system load, feature interactions, etc. Applying biostatistical methods can help teams:
+
+- Isolate causality in A/B testing  
+- Estimate risk of failure or defects  
+- Optimize release strategies  
+- Make data-backed decisions under uncertainty
+
+Let’s examine a few core concepts adapted from biostatistics.
+
+### 1. Hypothesis Testing in Feature Releases
+
+**Biostatistics Principle**: Null Hypothesis (H₀) and Alternative Hypothesis (H₁)  
+In clinical research, before approving a new treatment, researchers must prove its effect isn't due to chance. Similarly, when rolling out a new feature in software, we should test whether the observed impact (e.g., increased user engagement) is real or random.
+
+**Software Example**:  
+Feature A increases user engagement from 5% to 6%. Is this statistically significant?
+
+Using a two-proportion z-test or a chi-square test, you can determine if this increase is likely due to the feature or just natural variance.
+
+Suggested reading: Montgomery, D. C. (2017). *Design and Analysis of Experiments*
+
+### 2. Experimental Design: Randomized Control Trials (RCTs)
+
+In medicine, RCTs are the gold standard. In software, randomized A/B tests serve a similar purpose. By randomly assigning users to different experiences and controlling for confounding variables, we can draw causal conclusions.
+
+**Implementation Tips**:
+
+- Stratify users by behavior or demographics  
+- Pre-register hypotheses  
+- Use power analysis to determine sample size
+
+> Tool recommendation: [Optimizely](https://www.optimizely.com), [Eppo](https://www.geteppo.com)
+
+### 3. Regression Modeling to Predict Bugs or Failures
+
+**Biostatistics Principle**: Logistic Regression, Poisson Regression  
+Just as biostatisticians model disease incidence, software teams can model bug frequency or system failures. Predictive modeling based on variables like:
+
+- Code churn  
+- Developer experience  
+- Commit complexity  
+- Time since last release
+
+can yield risk scores that prioritize testing and QA efforts.
+
+Inspired by: Kim, S., Zimmermann, T., & Nagappan, N. (2011). “A Field Study of Refactoring Challenges and Benefits.” MSR.
+
+### 4. Survival Analysis for Software Uptime
+
+Survival analysis used in medicine to estimate time until death or relapse, can be applied to uptime monitoring, customer churn, or feature usage decay.
+
+**Example**:  
+Estimate how long a user stays active after installing your app, using Kaplan-Meier curves or Cox proportional hazards models.
+
+### 5. Bayesian Methods for Real-Time Updates
+
+While traditional biostatistics often leans frequentist, the rise of Bayesian statistics has influenced modern trials and can be similarly useful in software.
+
+**Use Cases**:
+
+- Adaptive A/B tests that stop early if a winner emerges  
+- Real-time personalization engines  
+- Probabilistic programming (e.g., PyMC, Stan)
+
+Deep dive: Gelman, A., Carlin, J., Stern, H., & Rubin, D. (2013). *Bayesian Data Analysis*
+
+## Challenges & Considerations
+
+- **Overfitting**: Avoid drawing conclusions from small or noisy datasets  
+- **Ethics**: Especially in health-related or sensitive applications, statistical misuse can lead to harm  
+- **Skill Gap**: Teams may need upskilling in statistical literacy or collaboration with data scientists
+
+---
+
+## Conclusion: Think Like a Statistician
+
+Biostatistics isn’t just about medicine—it's about structured thinking under uncertainty. For software development, that means fewer gut-based decisions and more repeatable, reliable outcomes.
+
+Whether you're running experiments, modeling system risk, or measuring user impact, borrowing techniques from biostatistics can make your development process more scientific, scalable, and successful.
+
+## Further Reading & Sources
+
+- Rosner, B. (2015). *Fundamentals of Biostatistics*  
+- Montgomery, D. C. (2017). *Design and Analysis of Experiments*  
+- Gelman, A. et al. (2013). *Bayesian Data Analysis*  
+- Efron, B., & Hastie, T. (2016). *Computer Age Statistical Inference*  
+- Kim, S., Zimmermann, T., & Nagappan, N. (2011). “A Field Study of Refactoring Challenges and Benefits.” MSR
