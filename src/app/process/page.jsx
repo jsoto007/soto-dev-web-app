@@ -49,24 +49,13 @@ function Discover() {
     <Section title="Discover" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          We begin by deeply understanding your business challenges, operations, and objectives. Through collaborative workshops and targeted discovery sessions, we gather the insights necessary to recommend tailored solutions.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          Our goal in this phase is to uncover the root problems and validate assumptions so that we can architect practical, scalable software aligned with your vision.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          This phase ends with a clear plan of action and aligned expectations on deliverables and outcomes.
         </p>
       </div>
 
@@ -74,12 +63,12 @@ function Discover() {
         Included in this phase
       </h3>
       <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+        <TagListItem>Discovery workshops</TagListItem>
+        <TagListItem>Process mapping</TagListItem>
+        <TagListItem>User interviews</TagListItem>
+        <TagListItem>Requirements gathering</TagListItem>
+        <TagListItem>Technical feasibility</TagListItem>
+        <TagListItem>Project scope definition</TagListItem>
       </TagList>
     </Section>
   )
@@ -90,23 +79,13 @@ function Build() {
     <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
+          Once the plan is in place, we move into agile development sprints. We prioritize transparency, collaboration, and quality—ensuring that each iteration brings you closer to a functional solution.
         </p>
         <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
+          Our team uses modern, proven technologies and best practices to build secure, maintainable, and performant software that solves your real-world business problems.
         </p>
         <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
+          We keep communication open throughout, providing regular demos and check-ins to gather feedback and adapt to evolving needs.
         </p>
       </div>
 
@@ -114,8 +93,7 @@ function Build() {
         author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
         className="mt-12"
       >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
+        SotoDev delivered exactly what we needed—on time, with clarity, and a deep understanding of our goals.
       </Blockquote>
     </Section>
   )
@@ -126,31 +104,13 @@ function Deliver() {
     <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
-          <strong className="font-semibold text-neutral-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.
+          As we near completion, we ensure your product is thoroughly tested, documented, and deployed with minimal disruption to your business.
         </p>
         <p>
-          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on social media.
+          Our launch process includes QA, performance tuning, and end-user training when needed—ensuring you’re fully equipped to get value from day one.
         </p>
         <p>
-          We ensure that the main pages of the site are{' '}
-          <strong className="font-semibold text-neutral-950">
-            fully functional
-          </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-neutral-950">
-            maintenance
-          </strong>{' '}
-          retainer.
+          Post-launch, we offer maintenance and support options to keep your software running smoothly as your business grows.
         </p>
       </div>
 
@@ -158,17 +118,14 @@ function Deliver() {
         Included in this phase
       </h3>
       <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
+        <ListItem title="Quality Assurance">
+          We rigorously test every feature to ensure reliability, usability, and performance before launch.
         </ListItem>
         <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
+          We deploy your solution using scalable and secure cloud infrastructure tailored to your needs.
         </ListItem>
         <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
+          From bug fixes to future iterations, our team is available to support and evolve your software.
         </ListItem>
       </List>
     </Section>
@@ -190,39 +147,29 @@ function Values() {
         title="Balancing reliability and innovation"
       >
         <p>
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
+          At SotoDev, we believe in solving problems through practical design, strategic reuse, and focused innovation. These values guide how we collaborate, build, and deliver impact to small businesses.
         </p>
       </SectionIntro>
 
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
+          <GridListItem title="Client-Focused">
+            We build with our clients' real goals in mind—not abstract ideas or unnecessary features.
           </GridListItem>
           <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+            We reuse proven components and patterns to save time, reduce risk, and maximize value.
           </GridListItem>
-          <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
+          <GridListItem title="Reliable">
+            Our process and communication are dependable—we do what we say, and we deliver.
           </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
+          <GridListItem title="Transparent">
+            We keep clients in the loop with updates, feedback cycles, and honest timelines.
           </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
+          <GridListItem title="Pragmatic">
+            We prioritize solutions that work today, but can scale for tomorrow.
           </GridListItem>
           <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+            We stay current with modern tools so you get thoughtful, sustainable software—not just trend-driven tech.
           </GridListItem>
         </GridList>
       </Container>
