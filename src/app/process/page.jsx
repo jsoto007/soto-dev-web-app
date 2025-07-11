@@ -93,7 +93,7 @@ function Build() {
         author={{ name: 'Jordan Lee', role: 'Founder of SmallBiz Solutions' }}
         className="mt-12"
       >
-        SotoDev's custom software empowered our team to streamline operations and work smarter. Their clarity, communication, and innovative use of AI made a real difference for our business.
+        SotoDev i s custom software empowered our team to streamline operations and work smarter. Their clarity, communication, and innovative use of AI made a real difference for our business.
       </Blockquote>
     </Section>
   )
@@ -154,7 +154,7 @@ function Values() {
       <Container className="mt-24">
         <GridList>
           <GridListItem title="Client-Focused">
-            We build with our clients' real goals in mind—not abstract ideas or unnecessary features.
+            We build with our clients real goals in mind—not abstract ideas or unnecessary features.
           </GridListItem>
           <GridListItem title="Efficient">
             We reuse proven components and patterns to save time, reduce risk, and maximize value.
