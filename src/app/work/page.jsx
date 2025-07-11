@@ -161,7 +161,7 @@ export default async function Work() {
         We approached <em>SotoDev</em> for their expertise in AI-driven solutions. They delivered a custom product that exceeded expectations — fast, efficient, and tailored to our needs.
       </Testimonial>
 
-      <Clients />
+      {/* <Clients /> */}
 
       <ContactSection />
     </RootLayout>
