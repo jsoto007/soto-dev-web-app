@@ -6,8 +6,8 @@ export default function SocialMediaIcons( {links} ) {
 
       return (
 <div class="flex items-center justify-center gap-4">
-
-  <div class="social-button">
+ 
+  <a class="social-button" href={links.github} target="_blank">
     <button class="relative w-12 h-12 rounded-full group">
       <div
         class="floater w-full h-full absolute top-0 left-0 bg-[#1E3A8A] rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
@@ -29,8 +29,8 @@ export default function SocialMediaIcons( {links} ) {
         </svg>
       </div>
     </button>
-  </div>
-  <div class="social-button">
+  </a>
+  <a class="social-button" href={links.live} target="_blank">
     <button class="relative w-12 h-12 rounded-full group" onclick="window.open('https://sotodev.com', '_blank')">
       <div
         class="floater w-full h-full absolute top-0 left-0 bg-[#A78BFA] rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
@@ -78,8 +78,8 @@ export default function SocialMediaIcons( {links} ) {
         </svg>
       </div>
     </button>
-  </div>
-  <div class="social-button">
+  </a>
+  <a class="social-button" href={links.youtube} target="_blank">
     <button class="relative w-12 h-12 rounded-full group">
       <div
         class="floater w-full h-full absolute top-0 left-0 bg-[#334155] rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
@@ -100,7 +100,7 @@ export default function SocialMediaIcons( {links} ) {
         </svg>
       </div>
     </button>
-  </div>
+  </a>
 </div>
 
       );
