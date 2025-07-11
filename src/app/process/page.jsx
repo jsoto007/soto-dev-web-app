@@ -79,7 +79,7 @@ function Build() {
     <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Once the plan is in place, we move into agile development sprints. We prioritize transparency, collaboration, and quality—ensuring that each iteration brings you closer to a functional solution.
+          Once the plan is in place, we move into agile development sprints. We prioritize transparency, collaboration, and quality, ensuring that each iteration brings you closer to a functional solution.
         </p>
         <p>
           Our team uses modern, proven technologies and best practices to build secure, maintainable, and performant software that solves your real-world business problems.
@@ -90,10 +90,10 @@ function Build() {
       </div>
 
       <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
+        author={{ name: 'Jordan Lee', role: 'Founder of SmallBiz Solutions' }}
         className="mt-12"
       >
-        SotoDev delivered exactly what we needed—on time, with clarity, and a deep understanding of our goals.
+        SotoDev's custom software empowered our team to streamline operations and work smarter. Their clarity, communication, and innovative use of AI made a real difference for our business.
       </Blockquote>
     </Section>
   )
