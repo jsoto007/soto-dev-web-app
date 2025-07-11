@@ -15,6 +15,8 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
     .filter(({ metadata }) => metadata !== caseStudy)
     .slice(0, 2)
 
+
+
   return (
     <RootLayout>
       <article className="mt-24 sm:mt-32 lg:mt-40">
@@ -67,7 +69,9 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
             <MDXComponents.wrapper>{children}</MDXComponents.wrapper>
           </FadeIn>
           <FadeIn>
+            
             <SocialMediaIcons />
+
             <h3 className="text-center text-xs mt-6 font-bold">Learn more →</h3>
           </FadeIn>
         </Container>

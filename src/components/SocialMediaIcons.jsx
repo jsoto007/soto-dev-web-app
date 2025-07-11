@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function SocialMediaIcons() {
+export default function SocialMediaIcons( {links} ) {
+    console.log('hello from media icons')
+    console.log(links)
 
       return (
 <div class="flex items-center justify-center gap-4">
