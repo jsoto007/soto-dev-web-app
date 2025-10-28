@@ -1,7 +1,7 @@
 // components/ContactForm.jsx
 "use client"
 
-import { useId } from "react"
+import { useId, useState } from "react"
 import { Button } from "@/components/Button"
 import { FadeIn } from "@/components/FadeIn"
 
@@ -41,12 +41,19 @@ function RadioInput({ label, ...props }) {
 }
 
 export default function ContactForm() {
+  const [status, setStatus] = useState("idle")
+  const [errorMessage, setErrorMessage] = useState("")
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (status === "loading") return
+
     const formData = new FormData(e.target)
     const data = Object.fromEntries(formData)
 
     console.log("Submitting data:", data)
+
+    setStatus("loading")
 
     const res = await fetch("/api/send-email", {
       method: "POST",
@@ -55,11 +62,14 @@ export default function ContactForm() {
     })
 
     if (res.ok) {
-      alert("Email sent successfully!")
+      e.target.reset()
+      setErrorMessage("")
+      setStatus("success")
     } else {
       const errorData = await res.json().catch(() => ({}))
       console.error("Failed to send email:", errorData)
-      alert(`Failed to send email. ${errorData.error || ''}`)
+      setErrorMessage(errorData.error || "Something went wrong. Please try again.")
+      setStatus("error")
     }
   }
 
@@ -67,8 +77,12 @@ export default function ContactForm() {
     <FadeIn className="lg:order-last">
       <form onSubmit={handleSubmit}>
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Work inquiries
+          Tell us about your project
         </h2>
+        <p className="mt-4 text-sm text-neutral-600">
+          Once we review your details, a strategist from Soto Dev, LLC will
+          follow up with next steps and an initial delivery roadmap.
+        </p>
         <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
           <TextInput label="Name" name="name" autoComplete="name" />
           <TextInput label="Email" type="email" name="email" autoComplete="email" />
@@ -77,19 +91,37 @@ export default function ContactForm() {
           <TextInput label="Message" name="message" />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
-              <legend className="text-base/6 text-neutral-500">Budget</legend>
+              <legend className="text-base/6 text-neutral-500">
+                Estimated budget (USD)
+              </legend>
+              <p className="mt-2 text-sm text-neutral-400">
+                Select the range that best matches your investment comfort level. Not sure yet? Choose the last option and we’ll help you scope it.
+              </p>
               <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <RadioInput label="$2.5K – $5K" name="budget" value="2.5" />
-                <RadioInput label="$5K – $10K" name="budget" value="5" />
-                <RadioInput label="$10K – $25K" name="budget" value="10" />
-                <RadioInput label="More than $25K" name="budget" value="25" />
+                <RadioInput label="$5K – $15K" name="budget" value="5-15" />
+                <RadioInput label="$15K – $35K" name="budget" value="15-35" />
+                <RadioInput label="$35K – $75K" name="budget" value="35-75" />
+                <RadioInput label="Let’s discuss the right range" name="budget" value="tbd" />
               </div>
             </fieldset>
           </div>
         </div>
-        <Button type="submit" className="mt-10">
-          Let’s work together
+        <Button type="submit" className="mt-10" disabled={status === "loading"}>
+          {status === "loading" ? "Sending…" : "Request a strategy call"}
         </Button>
+        <p className="mt-4 text-xs text-neutral-400">
+          We never share your information. You’ll receive a confirmation email with next steps from Soto Dev, LLC.
+        </p>
+        {status === "success" && (
+          <p className="mt-4 text-sm font-semibold text-emerald-600">
+            Thanks for reaching out! Your message is on its way — expect a reply within one business day.
+          </p>
+        )}
+        {status === "error" && (
+          <p className="mt-4 text-sm font-semibold text-rose-600">
+            {errorMessage}
+          </p>
+        )}
       </form>
     </FadeIn>
   )

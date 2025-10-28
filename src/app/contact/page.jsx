@@ -1,7 +1,4 @@
 
-import { useId } from 'react'
-import { Button } from '@/components/Button'
-
 import Link from 'next/link'
 
 import { Border } from '@/components/Border'
@@ -18,22 +15,24 @@ function ContactDetails() {
   return (
     <FadeIn>
       <h2 className="font-display text-base font-semibold text-neutral-950">
-        Our offices
+        How we collaborate
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        Prefer doing things in person? We don’t but we have to list our
-        addresses here for legal reasons.
+        Soto Dev, LLC is a remote-first studio with team members across the
+        United States. We gladly meet virtually and schedule on-site working
+        sessions when projects demand it.
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Email us
+          Reach our team
         </h2>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
           {[
-            ['Careers', 'jsoto7087@gmail.com'],
+            ['New projects', 'projects@sotodevllc.com'],
+            ['Partnerships', 'hello@sotodevllc.com'],
             // ['Press', 'press@studioagency.com'],
           ].map(([label, email]) => (
             <div key={email}>
@@ -53,7 +52,7 @@ function ContactDetails() {
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Follow us
+          Stay in touch
         </h2>
         <SocialMedia className="mt-6" />
       </Border>
@@ -62,15 +61,20 @@ function ContactDetails() {
 }
 
 export const metadata = {
-  title: 'Contact Us',
-  description: 'Let’s work together. We can’t wait to hear from you.',
+  title: 'Contact Soto Dev, LLC',
+  description:
+    'Let’s design your next software win. Tell us about your project and the Soto Dev, LLC team will get right back to you.',
 }
 
 export default function Contact() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Contact us" title="Let’s work together">
-        <p>We can’t wait to hear from you.</p>
+      <PageIntro eyebrow="Contact Soto Dev, LLC" title="Let’s build momentum together">
+        <p>
+          Share where you want to take your product or operations, and we’ll map
+          a plan to get you there. Most prospective clients hear back within one
+          business day.
+        </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">

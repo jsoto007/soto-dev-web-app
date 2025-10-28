@@ -9,6 +9,7 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
+import { RecruiterSection } from '@/components/RecruiterSection'
 // import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import bmfLogo from '../images/clients/unseal/bmfLogo.svg'
 import imageLaptop from '@/images/laptop.jpg'
@@ -204,6 +205,8 @@ export default async function Home() {
       </Testimonial>
 
       <Services />
+
+      <RecruiterSection />
 
       <ContactSection />
     </RootLayout>
